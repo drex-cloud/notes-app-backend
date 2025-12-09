@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ----------------------------
 SECRET_KEY = "django-insecure-hdzj9j($^ke+t&6c^db(w!$%h9k#-uh*=+m!)1(7+zn0nqai2n"
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['drex-notes-api.onrender.com', 'localhost', '127.0.0.1']
 
 # ----------------------------
 # Applications
@@ -152,6 +152,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
     "http://127.0.0.1:5501",
+    
 ]
 CORS_ALLOW_CREDENTIALS = True
 
