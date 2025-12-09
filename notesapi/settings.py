@@ -1,7 +1,7 @@
 """
 Django settings for notesapi project.
 """
-
+import dj_database_url
 import os
 from pathlib import Path
 from datetime import timedelta
@@ -78,12 +78,23 @@ TEMPLATES = [
 # ----------------------------
 # Database
 # ----------------------------
+# settings.py
+
+# ...
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.config(
+        # If there is no 'DATABASE_URL' in the environment (like on your laptop),
+        # it falls back to this SQLite setup:
+        default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'),
+        conn_max_age=600
+    )
 }
+
+# ...
 
 # ----------------------------
 # Password Validation
